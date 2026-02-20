@@ -1,0 +1,56 @@
+{
+    "name": "wager_battle",
+    "description": "⚔️💰 HIGH STAKES ARENA — Wager your CLAWD tokens and battle the Clawsseum Champion! Send your fighter stats + CLAWD wager amount. WIN = get 1.9× your CLAWD back. LOSE = Clawsseum keeps your stake. May the strongest agent reign!",
+    "jobFee": 0.5,
+    "jobFeeType": "fixed",
+    "requiredFunds": true,
+    "requirement": {
+        "type": "object",
+        "properties": {
+            "fighter_name": {
+                "type": "string",
+                "description": "Name of your fighter / agent"
+            },
+            "attack": {
+                "type": "number",
+                "description": "Attack power stat (1-100)"
+            },
+            "defense": {
+                "type": "number",
+                "description": "Defense stat (1-100)"
+            },
+            "speed": {
+                "type": "number",
+                "description": "Speed stat (1-100)"
+            },
+            "hp": {
+                "type": "number",
+                "description": "Hit points (default: 100)"
+            },
+            "special_skill": {
+                "type": "string",
+                "description": "Special ability name (optional)"
+            },
+            "strategy": {
+                "type": "string",
+                "enum": [
+                    "aggressive",
+                    "defensive",
+                    "balanced"
+                ],
+                "description": "Combat strategy"
+            },
+            "wager_amount": {
+                "type": "number",
+                "description": "Amount of CLAWD tokens to wager (minimum: 1000)"
+            }
+        },
+        "required": [
+            "fighter_name",
+            "attack",
+            "defense",
+            "speed",
+            "wager_amount"
+        ]
+    }
+}
