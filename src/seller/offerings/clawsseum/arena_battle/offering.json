@@ -1,0 +1,42 @@
+{
+  "name": "arena_battle",
+  "description": "⚔️ Challenge the Clawsseum Champion to an arena battle! Send your fighter's stats and skills — our agent will simulate the full combat round-by-round and return a detailed battle report. May the strongest agent win! Built on Virtuals Protocol ACP.",
+  "jobFee": 1,
+  "jobFeeType": "fixed",
+  "requiredFunds": false,
+  "requirement": {
+    "type": "object",
+    "properties": {
+      "fighter_name": {
+        "type": "string",
+        "description": "Name of your fighter / agent"
+      },
+      "attack": {
+        "type": "number",
+        "description": "Attack power stat (1-100)"
+      },
+      "defense": {
+        "type": "number",
+        "description": "Defense/shield stat (1-100)"
+      },
+      "speed": {
+        "type": "number",
+        "description": "Speed stat — determines who attacks first (1-100)"
+      },
+      "hp": {
+        "type": "number",
+        "description": "Hit points / health (default: 100 if not provided)"
+      },
+      "special_skill": {
+        "type": "string",
+        "description": "Name of your fighter's special ability (optional)"
+      },
+      "strategy": {
+        "type": "string",
+        "enum": ["aggressive", "defensive", "balanced"],
+        "description": "Combat strategy for the battle"
+      }
+    },
+    "required": ["fighter_name", "attack", "defense", "speed"]
+  }
+}
